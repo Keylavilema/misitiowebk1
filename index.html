@@ -5,228 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mi sitio </title>
 
-  
+  <style>
+    /* ----- ESTILOS GENERALES ----- */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #0f172a, #1e293b, #0f172a);
+      background-size: 300% 300%;
+      animation: gradientMove 12s ease infinite;
+      color: white;
+    }
 
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web con Imagen</title>
-    <style>
-        /* ----- ESTILOS GENERALES ----- */
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(120deg, #0f172a, #1e293b, #0f172a);
-            background-size: 300% 300%;
-            animation: gradientMove 12s ease infinite;
-            color: white;
-        }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+    }
 
-        header {
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(10px);
-            z-index: 10;
-        }
+    nav a {
+      color: #e2e8f0;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-        nav a {
-            color: #e2e8f0;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
+    nav a:hover {
+      color: #38bdf8;
+    }
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+    /* ----- HERO SECTION ----- */
+    .hero {
+      height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-        /* ----- HERO SECTION ----- */
-        .hero {
-            height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+      animation: fadeIn 1.2s ease forwards;
+      opacity: 0;
+    }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            animation: fadeIn 1.2s ease forwards;
-            opacity: 0;
-        }
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      animation: fadeIn 1.8s ease forwards;
+      opacity: 0;
+    }
 
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 600px;
-            animation: fadeIn 1.8s ease forwards;
-            opacity: 0;
-        }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
+    .btn {
+      margin-top: 30px;
+      padding: 12px 28px;
+      background: #38bdf8;
+      color: #0f172a;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+    }
 
-        .btn {
-            margin-top: 30px;
-            padding: 12px 28px;
-            background: #38bdf8;
-            color: #0f172a;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            border: none;
-            cursor: pointer;
-            transition: 0.3s;
-            font-weight: bold;
-        }
+    .btn:hover {
+      background: #7dd3fc;
+    }
 
-        .btn:hover {
-            background: #7dd3fc;
-        }
+    /* ----- SERVICIOS ----- */
+    .servicios {
+      padding: 80px 40px;
+      text-align: center;
+    }
 
-        /* ----- IMAGEN SECTION STYLES ----- */
-        .imagen-section {
-            padding: 60px 20px;
-            text-align: center;
-        }
+    .servicios h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
 
-        .imagen-container {
-            max-width: 800px;
-            margin: 20px auto 0; /* Centra el contenedor horizontalmente */
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            display: inline-block;
-        }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
 
-        .imagen-container img {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
+    .card {
+      background: rgba(255,255,255,0.06);
+      padding: 25px;
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      transition: 0.3s;
+    }
 
-        /* ----- SERVICIOS ----- */
-        .servicios {
-            padding: 80px 40px;
-            text-align: center;
-        }
+    .card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-5px);
+    }
 
-        .servicios h2 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
+    /* ----- CONTACTO ----- */
+    .contacto {
+      padding: 80px 40px;
+      text-align: center;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
+    .contacto h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
 
-        .card {
-            background: rgba(255,255,255,0.06);
-            padding: 25px;
-            border-radius: 20px;
-            backdrop-filter: blur(8px);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            background: rgba(255,255,255,0.12);
-            transform: translateY(-5px);
-        }
-
-        /* ----- CONTACTO ----- */
-        .contacto {
-            padding: 80px 40px;
-            text-align: center;
-        }
-
-        .contacto h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: rgba(0,0,0,0.2);
-            margin-top: 40px;
-        }
-    </style>
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: rgba(0,0,0,0.2);
+      margin-top: 40px;
+    }
+  </style>
 </head>
 
 <body>
 
-        <header>
-        <h2 style="margin:0;">BIENVENIDOS A MI SITIO WEB</h2>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#imagen">Imagen</a>
-            <a href="#servicios">Estadisticas</a>
-            <a href="#contacto">Contacto</a>
-        </nav>
-    </header>
+  <!-- NAV -->
+  <header>
+    <h2 style="margin:0;">BIENVENIDOS A MI SITIO WEB</h2>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Estadisticas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-        <section id="inicio" class="hero">
-        <h1>Estamos creciendo en el centro del país</h1>
-        <p>Te ayudamos realizando proyectos de todo tipo que maneje R o Phyton juntos a otros lenguajes</p>
-        <button class="btn">Comenzar</button>
-    </section>
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <h1>Estamos creciendo en el centro del país</h1>
+    <p>Te ayudamos realizando proyectos de todo tipo que maneje R o Phyton</p>
+    <button class="btn">Comenzar</button>
+  </section>
 
-    
-        <section id="imagen" class="imagen-section">
-        <h2>Nuestra Última Creación</h2>
-        <div class="imagen-container">
-                        <img src="IMAGEN1.JPG" alt="Imagen de muestra de diseño o datos.">
-        </div>
-        <p style="margin-top: 20px; font-style: italic;">Una muestra de nuestro trabajo en visualización de datos.</p>
-    </section>
+  <!-- SERVICIOS -->
+  <section id="servicios" class="servicios">
+    <h2>Servicios</h2>
 
-    
-        <section id="servicios" class="servicios">
-        <h2>Servicios</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Diseño Web</h3>
+        <p>Sitios modernos, rápidos y elegantes.</p>
+      </div>
+      <div class="card">
+        <h3>Dashboards</h3>
+        <p>Visualizaciones con R Shiny, Python o Power BI.</p>
+      </div>
+      <div class="card">
+        <h3>Automatización</h3>
+        <p>Scripts inteligentes para mejorar procesos.</p>
+      </div>
+    </div>
+  </section>
 
-        <div class="cards">
-            <div class="card">
-                <h3>Diseño Web</h3>
-                <p>Sitios modernos, rápidos y elegantes.</p>
-            </div>
-            <div class="card">
-                <h3>Dashboards</h3>
-                <p>Visualizaciones con R Shiny, Python o Power BI.</p>
-            </div>
-            <div class="card">
-                <h3>Automatización</h3>
-                <p>Scripts inteligentes para mejorar procesos.</p>
-            </div>
-        </div>
-    </section>
+  <!-- CONTACTO -->
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>Escríbeme a: <strong>tucorreo@example.com</strong></p>
+  </section>
 
-    
-        <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
-        <p>Escríbeme a: <strong>tucorreo@example.com</strong></p>
-    </section>
-
-    
-    <footer>
-        © 2025 - Mi Landing Page Moderna
-    </footer>
+  <footer>
+    © 2025 - Mi Landing Page Moderna
+  </footer>
 
 </body>
 </html>
