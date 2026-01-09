@@ -30,6 +30,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px 0;
         }
 
         .card {
@@ -51,7 +52,6 @@
             border: 5px solid var(--secundario);
             margin-bottom: 20px;
             transition: transform 0.3s ease;
-            background-color: #eee;
         }
 
         h1 {
@@ -97,7 +97,7 @@
 
         .btn {
             text-decoration: none;
-            padding: 12px 25px;
+            padding: 12px 20px;
             border-radius: 10px;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -107,24 +107,13 @@
             display: inline-block;
         }
 
-        .btn-gym {
-            background-color: var(--primario);
-            color: white;
-        }
+        .btn-gym { background-color: var(--primario); color: white; }
+        .btn-whatsapp { background-color: #25d366; color: white; }
+        .btn-pdf { background-color: #e74c3c; color: white; }
 
-        .btn-gym:hover {
-            background-color: #732d91;
-            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
-        }
-
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #128c7e;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         footer {
@@ -149,14 +138,15 @@
             <div class="info-item">🏋️‍♀️ <strong>Hobby:</strong> Hacer ejercicio en el Gym</div>
         </div>
 
-        <p>Estudiante de Estadística apasionada por el análisis de datos y el entrenamiento saludable.</p>
-
         <div class="btn-container">
-            <button class="btn btn-gym" onclick="alert('¡A darle con todo en el entrenamiento! 💪')">Ver mi rutina</button>
-            <a href="https://wa.me/593998929082" class="btn btn-whatsapp" target="_blank">Contactar WhatsApp</a>
+            <a href="https://wa.me/593998929082" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
+            
+            <a href="mongo atlas.pdf" class="btn btn-pdf" target="_blank">📄 Ver PDF</a>
+            
+            <button class="btn btn-gym" onclick="alert('¡A darle con todo en el entrenamiento! 💪')">Mi Rutina</button>
         </div>
 
-        <footer>© 2026 - Diseñado por Keyla</footer>
+        <footer>© 2026 - Diseñado para Keyla</footer>
     </div>
 
 </body>
@@ -165,6 +155,7 @@
   
 
     
+
 
 
 
